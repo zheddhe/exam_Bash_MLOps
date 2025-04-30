@@ -103,30 +103,34 @@ git clone https://github.com/DataScientest/exam_Bash_MLOps.git
 
 En clonant le git, vous aurez l'arborescence suivante :
 ```txt
-data/
-├── processed/               # Dossier contenant les fichiers CSV prétraités
-├── raw/
-│   └── sales_data.csv      # Fichier CSV contenant 500 lignes de données brutes
-logs/
-├── collect.logs            # Fichier de logs pour la collecte des données
-├── preprocessed.logs       # Fichier de logs pour le prétraitement des données collectées
-├── train.logs              # Fichier de logs pour l'entraînement du modèle avec les données prétraitées
-model/                      # Dossier stockant toutes les versions des modèles entraînés
-scripts/
-├── collect.sh              # Script de collecte des données toutes les 2 minutes
-├── preprocessed.sh         # Script lançant le prétraitement des données collectées
-├── train.sh                # Script lançant l'entraînement du modèle avec les données prétraitées
-src/
-├── preprocessed.py         # Script de prétraitement des données collectées
-├── train.py                # Script d'entraînement du modèle avec les données prétraitées
-tests/
-├── test_collect.py         # Script de test pour vérifier la collecte des données et l'existence de fichiers CSV dans data/raw
-├── test_model.py           # Script de test pour vérifier l'entraînement du modèle et l'existence du fichier model.pkl
-├── test_preprocessed.py    # Script de test pour vérifier le bon traitement des données
-cron.txt                    # Fichier de configuration pour les tâches cron
-Makefile                    # Fichier Makefile pour automatiser les tâches
-README.md                   # Fichier de documentation du projet
-requirements.txt            # Fichier contenant les dépendances du projet
+exam_NOM/
+  ├── exam_bash/
+      ├── data/
+        ├── processed/              # Dossier contenant les fichiers CSV prétraités
+        └── raw/
+            └── sales_data.csv      # Fichier CSV contenant 500 lignes de données brutes
+      ├── logs/
+          ├── test_logs/
+          ├── collect.logs            # Fichier de logs pour la collecte des données
+          ├── preprocessed.logs       # Fichier de logs pour le prétraitement des données collectées
+          └── train.logs              # Fichier de logs pour l'entraînement du modèle avec les données prétraitées
+      ├── model/                      # Dossier stockant toutes les versions des modèles entraînés
+      ├── scripts/
+          ├── collect.sh              # Script de collecte des données toutes les 2 minutes
+          ├── preprocessed.sh         # Script lançant le prétraitement des données collectées
+          ├── train.sh                # Script lançant l'entraînement du modèle avec les données prétraitées
+          └── cron.txt                # Fichier de configuration pour les tâches cron 
+      ├── src/
+          ├── preprocessed.py         # Script de prétraitement des données collectées
+          └── train.py                # Script d'entraînement du modèle avec les données prétraitées
+      ├── tests/
+          ├── test_collect.py         # Script de test pour vérifier la collecte des données et l'existence de fichiers CSV dans data/raw
+          ├── test_model.py           # Script de test pour vérifier l'entraînement du modèle et l'existence du fichier model.pkl
+          └── test_preprocessed.py    # Script de test pour vérifier le bon traitement des données                   
+      ├── Makefile                    # Fichier Makefile pour automatiser les tâches
+      ├── README.md                   # Fichier de documentation du projet
+      └── requirements.txt            # Fichier contenant les dépendances du projet
+
 ```
 
 > Vous trouverez dans les répertoires **scripts/** et **src/** l’ensemble des consignes et des éléments attendus à mettre en œuvre.
