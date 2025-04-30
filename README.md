@@ -9,10 +9,22 @@ Cet examen se décompose en 2 exercices :
 
 ### Examen : Bash - OBLIGATOIRE
 
+Vous travaillez pour une entreprise qui vend des cartes graphiques et vous êtes chargé d'automatiser un processus de collecte de données, de prétraitement et d'entraînement d'un modèle de prédiction des ventes. Votre manager vous a confié un projet où vous devrez utiliser des outils Linux et des scripts pour automatiser chaque étape de ce processus.
+
+Votre objectif est de concevoir un pipeline automatisé permettant de :
+
+- **Collecter les données** provenant d'une API toutes les minutes,
+- **Les enregistrer** dans un fichier CSV,
+- **Les prétraiter**,
+- **Entraîner un modèle de prédiction** sur ces données prétraitées.
+
+L’ensemble de ce processus doit être automatisé en utilisant des **scripts Bash** pour enchaîner les différentes étapes, **Python** pour le traitement des données et l'entraînement du modèle, **cron** pour planifier l'exécution des scripts à intervalles réguliers, et un **Makefile** pour lancer toutes les étapes en une seule ligne de commande.
+
+---
 
 #### Mise en place de l'API
 
-Dans ce cours, nous avons vu comment fonctionne un système Linux. Nous aurions pu aller encore plus en détail mais nous avons construit la base pour la suite du parcours. Suivez les instructions suivantes pour réaliser l'exercice.
+Dans ce cours, nous avons vu comment fonctionne un système Linux. Nous aurions pu all er encore plus en détail mais nous avons construit la base pour la suite du parcours. Suivez les instructions suivantes pour réaliser l'exercice.
 
 <div class="alert alert-info"><i class="icon circle info"></i>
 Exercice à réaliser <i>obligatoirement</i> sur la machine Linux mise à votre disposition.
@@ -92,11 +104,11 @@ On peut, par exemple, récupérer les ventes de RTX 3060 à l'aide de la command
 curl "http://0.0.0.0:5000/rtx3060"
 ```
 
-> Créez un dossier exam_NOM ou NOM est votre nom de famille.
+### Mise en place de l'examen
 
-> Ajoutez un dossier nommé exam_bash
-
-> Clonez le Git pour les modalités de l'examen : 
+- Créez un dossier exam_NOM où NOM est votre nom de famille.
+- Ajoutez un dossier nommé exam_bash
+- Clonez le Git pour les modalités de l'examen : 
 ```shell 
 git clone https://github.com/DataScientest/exam_Bash_MLOps.git
 ```
@@ -106,137 +118,158 @@ En clonant le git, vous aurez l'arborescence suivante :
 exam_NOM/
   ├── exam_bash/
       ├── data/
-        ├── processed/              # Dossier contenant les fichiers CSV prétraités
-        └── raw/
-            └── sales_data.csv      # Fichier CSV contenant 500 lignes de données brutes
+      │   ├── processed/              # Fichiers CSV prétraités
+      │   └── raw/
+      │       └── sales_data.csv      # Fichier CSV des données brutes (500 lignes)
       ├── logs/
-          ├── test_logs/
-          ├── collect.logs            # Fichier de logs pour la collecte des données
-          ├── preprocessed.logs       # Fichier de logs pour le prétraitement des données collectées
-          └── train.logs              # Fichier de logs pour l'entraînement du modèle avec les données prétraitées
-      ├── model/                      # Dossier stockant toutes les versions des modèles entraînés
+      │   ├── test_logs/
+      │   ├── collect.logs            # Logs de collecte des données
+      │   ├── preprocessed.logs       # Logs de prétraitement des données
+      │   └── train.logs              # Logs d'entraînement du modèle
+      ├── model/                      # Stockage des modèles entraînés
       ├── scripts/
-          ├── collect.sh              # Script de collecte des données toutes les 2 minutes
-          ├── preprocessed.sh         # Script lançant le prétraitement des données collectées
-          ├── train.sh                # Script lançant l'entraînement du modèle avec les données prétraitées
-          └── cron.txt                # Fichier de configuration pour les tâches cron 
+      │   ├── collect.sh              # Script de collecte des données (toutes les 2 minutes)
+      │   ├── preprocessed.sh         # Script de prétraitement des données
+      │   ├── train.sh                # Script d'entraînement du modèle
+      │   └── cron.txt                # Fichier de configuration des tâches cron
       ├── src/
-          ├── preprocessed.py         # Script de prétraitement des données collectées
-          └── train.py                # Script d'entraînement du modèle avec les données prétraitées
+      │   ├── preprocessed.py         # Script de prétraitement des données (Python)
+      │   └── train.py                # Script d'entraînement du modèle (Python)
       ├── tests/
-          ├── test_collect.py         # Script de test pour vérifier la collecte des données et l'existence de fichiers CSV dans data/raw
-          ├── test_model.py           # Script de test pour vérifier l'entraînement du modèle et l'existence du fichier model.pkl
-          └── test_preprocessed.py    # Script de test pour vérifier le bon traitement des données                   
-      ├── Makefile                    # Fichier Makefile pour automatiser les tâches
-      ├── README.md                   # Fichier de documentation du projet
-      └── requirements.txt            # Fichier contenant les dépendances du projet
+      │   ├── test_collect.py         # Test de la collecte des données et de l'existence du CSV
+      │   ├── test_model.py           # Test de l'entraînement du modèle et de l'existence du model.pkl
+      │   └── test_preprocessed.py    # Test du bon prétraitement des données
+      ├── Makefile                    # Makefile pour automatiser les tâches
+      ├── README.md                   # Documentation du projet
+      └── requirements.txt            # Dépendances du projet
+```
+> La version de Python utilisée pour ce projet est Python 3.12
 
+Exécutez la commande suivante pour configurer l'environnement avec la bonne version de Python et installer automatiquement les bibliothèques nécessaires au bon fonctionnement des scripts fournis :
+```bash
+uv sync
 ```
 
-> Vous trouverez dans les répertoires **scripts/** et **src/** l’ensemble des consignes et des éléments attendus à mettre en œuvre.
->
-> Veuillez ne pas modifier les fichiers de tests. Vous pouvez toutefois les consulter pour mieux comprendre les vérifications attendues. Ces tests vous offrent un premier aperçu de la conformité de votre travail. Pour les exécuter, utilisez la commande `make tests`.
 
-<br>
+#### 1. **Collecte des Données**
+Le processus commence par la collecte des données des ventes de cartes graphiques via une API que vous devrez interroger toutes les **3 minutes**. Ces données sont récupérées et stockées dans un fichier CSV situé dans le dossier `data/raw/`. 
 
-Votre fichier **cron.txt** doit être configuré pour exécuter automatiquement la collecte, le prétraitement et l'entraînement du modèle toutes les 3 minutes.
+#### 2. **Prétraitement des Données**
+Une fois les données collectées, vous devrez appliquer un prétraitement. Ce prétraitement peut inclure :
+- La suppression de valeurs manquantes ou incorrectes,
+- La conversion des données dans le format approprié (par exemple, conversion de la date ou transformation des types de données),
+- L'agrégation ou le filtrage des données si nécessaire.
 
-Configurez également votre **Makefile** afin qu'une simple commande `make bash` permette de lancer l'ensemble du programme : collecte des données, prétraitement et entraînement du modèle.
+Les résultats du prétraitement doivent être enregistrés dans un fichier CSV situé dans le dossier `data/processed/`.
 
-Votre fichier **requirements.txt** doit inclure uniquement les bibliothèques indispensables à l'exécution de votre programme, avec leurs versions précises.
+#### 3. **Entraînement du Modèle**
+Les données prétraitées serviront à entraîner un modèle de prédiction des ventes des cartes graphiques. Vous utiliserez probablement un modèle **XGBoost** pour cette tâche. Le modèle entraîné sera sauvegardé dans le dossier `model/` et sera utilisé pour faire des prédictions futures.
+
+#### 4. **Automatisation via Cron**
+Le processus complet (collecte des données, prétraitement et entraînement) doit être exécuté automatiquement. Vous utiliserez **cron** pour planifier les tâches à exécuter toutes les **3 minutes**. Un fichier `cron.txt` sera fourni pour configurer les tâches cron.
+
+#### 5. **Utilisation d'un Makefile**
+Un **Makefile** sera utilisé pour faciliter l'exécution des tâches et automatiser l'ensemble du pipeline avec la commande suivante :
+```bash
+make bash
+```
+
+#### Fichiers à Modifier
+
+Vous trouverez dans les différents fichiers à modifier, les consignes correspondantes pour chaque tâche à réaliser.
+
+1. **collect.sh**  
+   Le script `collect.sh` doit être modifié pour automatiser la collecte des données toutes les 2 minutes.
+
+2. **preprocessed.sh**  
+   Le script `preprocessed.sh` doit être modifié pour lancer le prétraitement des données collectées.
+
+3. **train.sh**  
+   Le script `train.sh` doit être modifié pour entraîner le modèle avec les données prétraitées.
+
+4. **cron.txt**  
+   Vous devez configurer `cron.txt` pour exécuter automatiquement la collecte, le prétraitement et l'entraînement du modèle toutes les 3 minutes.
+
+5. **preprocessed.py**  
+   Le script `preprocessed.py` doit être modifié pour effectuer le prétraitement des données collectées (nettoyage, transformation des données, etc.).
+
+6. **train.py**  
+   Le script `train.py` doit être modifié pour entraîner le modèle de prédiction avec les données prétraitées.
+
+7. **Makefile**  
+   Le fichier `Makefile` doit être ajusté pour automatiser l’ensemble du processus avec une seule commande :
+   ```bash
+   make bash
+   ```
+8. **requirements.txt**
+   Le fichier requirements.txt doit inclure uniquement les bibliothèques nécessaires pour l'exécution du programme, comme pandas, numpy, xgboost, etc.
 
 Voici un diagramme qui résume brièvement le fonctionnement attendu du programme : 
 
 <center><img src="https://assets-datascientest.s3.eu-west-1.amazonaws.com/MLOPS/image.png" style="width:80%"/></center>
 
-Plus qu'un exercice à faire pour valider ce module !
 
-### 10.2 Examen : JQ - OPTIONNEL
+### Tests et Vérifications
 
-#### Mise en place
+Vous ne devez pas modifier les fichiers de test fournis. Ceux-ci valideront la conformité de votre travail.
 
-Vous rentrerez les commandes dans un fichier exécutable (avec le droit d'exécution +x) `exam_jq.sh`. Afin de valider l'exercice, vous devez rendre le fichier `exam_jq.sh` ainsi qu'un fichier `res_jq.txt` alimenté à l'aide de la commande `./exam_jq.sh > res_jq.txt`. N'oubliez pas qu'un être humain corrigera vos fichiers, pensez donc à bien présenter vos résultats dans vos 2 fichiers.
+- **Test de la collecte des données** (`test_collect.py`)
+- **Test de l'entraînement du modèle** (`test_model.py`)
+- **Test du prétraitement des données** (`test_preprocessed.py`)
 
-> Créez dans votre dossier exam\_NOM, le dossier exam\_jq
-
-> Rendez-vous dans celui-ci, et créez un fichier `exam_jq.sh` comme ceci :
-
+Pour exécuter les tests, vous pouvez utiliser la commande suivante :
 ```bash
-#!/bin/bash
-
-echo "1. Énoncé de la question 1"
-<commande pour répondre>
-echo "Commande : <commande pour répondre>"
-echo "Réponse : réponse de la question 1 si demandé"
-echo -e "\n---------------------------------\n"
-...
-
-echo "n. Énoncé de la question n"
-<commande pour répondre>
-echo "Commande : <commande pour répondre>"
-echo "Réponse : réponse de la question n si demandé"
-echo -e "\n---------------------------------\n"
+make tests
 ```
 
-- <commande pour répondre> : placez la commande liée à la question afin d'avoir le résultat de la commande dans le fichier `res_jq.txt`.
+Cela va créer dans logs/tests_logs des fichiers test_*.logs.
 
-Remplissez les champs selon les questions évidemment. La réponse n'est pas le résultat du code mais votre interprétation de celui-ci.
+Exemple de sortie logs :
 
-#### Questions
-
-Voici le fichier json qui va servir pour la réalisation de l'examen: 
-
-```bash
-wget https://dst-de.s3.eu-west-3.amazonaws.com/bash_fr/people.json
+**test_collect.logs** : 
+```txt
+=== Début des tests (2025-04-30 15:21:03) ===
+Début du test de structure du CSV
+Fichier CSV chargé avec 520 lignes et 3 colonnes
+Test réussi : Le CSV est valide.
+Fin du test de structure du CSV
+=== Fin des tests ===
 ```
 
-Seules les questions 1, 2 et 4 attendent une Réponse interprétée.
-
-1. Affichez le nombre d'attributs par document ainsi que l'attribut name. Combien y a-t-il d'attribut par document ? N'affichez que les 12 premières lignes avec la commande head (notebook #2).
-
-2. Combien y a-t-il de valeur "unknown" pour l'attribut "birth_year" ? Utilisez la commande tail afin d'isoler la réponse.
-
-3. Affichez la date de création de chaque personnage et son nom. La date de création doit être de cette forme : l'année, le mois et le jour. N'affichez que les 10 premières lignes. (Pas de Réponse attendue)
-
-4. Certains personnages sont nés en même temps. Retrouvez toutes les pairs d'ids (2 ids) des personnages nés en même temps.
-
-5. Renvoyez le numéro du premier film (de la liste) dans lequel chaque personnage a été vu suivi du nom du personnage. N'affichez que les 10 premières lignes. (Pas de Réponse attendue)
-
-#### Bonus
-
-Ajoutez cette commande pour séparer la partie obligatoire de la partie optionnelle.
-
-```bash
-echo -e "\n----------------BONUS----------------\n"
+**test_preprocessed.logs** : 
+```txt
+=== Début des tests (2025-04-30 15:21:19) ===
+Début du test de structure du fichier prétraité
+Fichier chargé : data/processed/sales_processed_20250430_1516.csv
+Vérification colonne 'timestamp' : OK (non présente)
+Vérification types entiers : OK (toutes les colonnes sont des entiers)
+Test terminé pour le fichier prétraité.
+=== Fin des tests ===
 ```
 
-Aucune Réponse n'est demandée.
+**test_model.logs** : 
+```txt
+=== Début des tests (2025-04-30 15:21:23) ===
+Début du test de présence du fichier modèle
+Test réussi : le fichier modèle existe.
+=== Fin des tests (2025-04-30 15:21:23) ===
+```
 
-Enregistrez chacune des commandes dans des fichiers au format : people_\<numéro\_de\_la\_question>.json
-Ces fichiers doivent se trouver dans un dossier bonus/.
+Une fois l’ensemble du programme exécuté (collecte, prétraitement, entraînement), voici ce que vous devez observer :
 
-N'ajoutez rien au fichier `res_jq.txt`. Vous devez faire la redirection directement dans le fichier `exam_jq.sh`.
+**data/raw** :
+- Des fichiers CSV contenant les **données brutes de ventes** récupérées automatiquement depuis l'API.
+- Ces fichiers suivent un nommage du type : `sales_YYYYMMDD_HHMM.csv`.
 
-Les questions sont à réaliser depuis le fichier créé à la question précédente, sauf pour la question 6.
+**data/processed/** :
+- Des fichiers CSV contenant les **données prétraitées**, prêtes à être utilisées pour l'entraînement du modèle.
+- Ces fichiers suivent un nommage du type : `sales_processed_YYYYMMDD_HHMM.csv`.
 
-6. Supprimez les documents lorsque l'attribut height n'est pas un nombre.
+**model/** :
+- Une ou plusieurs versions du **modèle entraîné**, enregistrées sous forme de fichier `.pkl`.
+- Exemple : `model.pkl` ou `model_YYYYMMDD_HHMM.pkl`.
 
-7. Transformer l'attribut height en nombre.
-
-8. Ne renvoyez que les personnages dont la taille est entre 156 et 171.
-
-9. Renvoyez le plus petit individu de `people_8.json` et affichez cette phrase en une seule commande : "\<nom\_du\_personnage> is \<taille> tall"
-Renvoyez la commande dans un fichier `people_9.txt` et non `.json`.
-
-#### Rendu : JQ
-
-Nous avons les dossiers et fichiers suivants :
-
-- exam\_NOM/exam\_jq/exam\_jq.sh
-- exam\_NOM/exam\_jq/res\_jq.txt
-- exam\_NOM/exam\_jq/bonus/people\_\<6 à 9>.\<json ou txt>
-
-#### Rendu final
+## Rendu final
 
 > Créez une archive exam_NOM.tar
 
