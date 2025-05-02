@@ -150,6 +150,7 @@ Exécutez la commande suivante pour configurer l'environnement avec la bonne ver
 uv sync
 ```
 
+N'oubliez pas d'activer votre environnement virtuel avant de commencer l'examen.
 
 #### 1. **Collecte des Données**
 Le processus commence par la collecte des données des ventes de cartes graphiques via une API que vous devrez interroger toutes les **3 minutes**. Ces données sont récupérées et stockées dans un fichier CSV situé dans le dossier `data/raw/`. 
@@ -224,7 +225,7 @@ make tests
 
 Cela va créer dans logs/tests_logs des fichiers test_*.logs.
 
-Exemple de sortie logs :
+Exemple de sortie des journaux (logs) générés par votre programme d'automatisation fonctionnel :
 
 **test_collect.logs** : 
 ```txt
