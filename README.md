@@ -2,13 +2,6 @@
 
 ## Examen
 
-Cet examen se décompose en 2 exercices :
-
-- Le premier porte sur le langage bash (Obligatoire pour valider le module)
-- Le second porte sur l'outil jq (Optionnelle)
-
-### Examen : Bash - OBLIGATOIRE
-
 Vous travaillez pour une entreprise qui vend des cartes graphiques et vous êtes chargé d'automatiser un processus de collecte de données, de prétraitement et d'entraînement d'un modèle de prédiction des ventes. Votre manager vous a confié un projet où vous devrez utiliser des outils Linux et des scripts pour automatiser chaque étape de ce processus.
 
 Votre objectif est de concevoir un pipeline automatisé permettant de :
@@ -72,17 +65,30 @@ Il est possible de récupérer ces informations à l'aide de la commande **cURL*
 #### Commande apt
 
 `apt` est un gestionnaire de paquets qui contiennent différents logiciels que vous pouvez installer assez facilement avec une seule ligne de code.
-Pour ce faire, nous pouvons faire comme suit :
+
+Sur la version actuelle d'**Ubuntu 20.04.2 LTS**, vous pouvez utiliser la commande `apt-get` pour gérer les logiciels en ligne de commande. Cela vous permet d'installer, de mettre à jour ou de supprimer des paquets de manière précise.
 
 ```shell
-apt install software_name
+apt-get install nom_du_logiciel
 ```
 
-Dans les anciennes versions d'Ubuntu, vous aviez besoin d'utiliser `apt-get` au lieu de `apt`.
 Dans la plupart des cas, vous avez besoin de `sudo` pour forcer les droits d'installation d'un logiciel.
 
-Pour vous assurer que les paquets sont à jour, vous pouvez utiliser `sudo apt update` . Pour mettre à jour les
-logiciels, vous pouvez utiliser `sudo apt upgrade` . Vous pouvez ajouter ou supprimer certains paquets et supprimer complètement un logiciel utilisant la fonction `apt purge`.
+Avant d'installer quoi que ce soit, il est recommandé de mettre à jour la liste des paquets disponibles sur votre système en exécutant :
+
+```shell
+sudo apt-get update
+```
+
+Ensuite, vous pouvez appliquer les mises à jour disponibles pour vos logiciels installés avec :
+```shell
+sudo apt-get upgrade
+```
+
+Pour supprimer un logiciel ainsi que ses fichiers de configuration, vous pouvez utiliser la commande :
+```shell
+sudo apt-get purge nom_du_logiciel
+```
 
 > Installez `curl` avec `apt`.
 
@@ -108,10 +114,8 @@ curl "http://0.0.0.0:5000/rtx3060"
 
 - Créez un dossier exam_NOM où NOM est votre nom de famille.
 - Ajoutez un dossier nommé exam_bash
-- Clonez le Git pour les modalités de l'examen : 
-```shell 
-git clone https://github.com/DataScientest/exam_Bash_MLOps.git
-```
+- Clonez le Git pour les modalités de l'examen : https://github.com/DataScientest/exam_Bash_MLOps.git
+
 
 En clonant le git, vous aurez l'arborescence suivante :
 ```txt
@@ -141,16 +145,15 @@ exam_NOM/
       │   └── test_preprocessed.py    # Test du bon prétraitement des données
       ├── Makefile                    # Makefile pour automatiser les tâches
       ├── README.md                   # Documentation du projet
-      └── requirements.txt            # Dépendances du projet
+      ├── requirements.txt            # Dépendances du projet
+      ├── pyproject.toml              # Configuration du projet (dépendances et autres paramètres)
+      └── uv.lock                     # Fichier de verrouillage des dépendances pour uv
 ```
 > La version de Python utilisée pour ce projet est Python 3.12
 
-Exécutez la commande suivante pour configurer l'environnement avec la bonne version de Python et installer automatiquement les bibliothèques nécessaires au bon fonctionnement des scripts fournis :
-```bash
-uv sync
-```
+Dans l'arborescence du projet, vous trouverez les fichiers **uv.lock** et **pyproject.toml** qui sont nécessaires pour la gestion des dépendances qui devront être configurés en suivant les différentes commandes abordées dans le cours des bonnes pratiques.
 
-N'oubliez pas d'activer votre environnement virtuel avant de commencer l'examen.
+Avant de commencer l'examen, assurez-vous de vous synchroniser avec le projet et d'activer votre environnement virtuel.
 
 #### 1. **Collecte des Données**
 Le processus commence par la collecte des données des ventes de cartes graphiques via une API que vous devrez interroger toutes les **3 minutes**. Ces données sont récupérées et stockées dans un fichier CSV situé dans le dossier `data/raw/`. 
@@ -174,13 +177,18 @@ Un **Makefile** sera utilisé pour faciliter l'exécution des tâches et automat
 ```bash
 make bash
 ```
+Voici un diagramme qui résume brièvement le fonctionnement attendu du programme en exécutant cette commande: 
+
+<center><img src="https://assets-datascientest.s3.eu-west-1.amazonaws.com/MLOPS/image.png" style="width:80%"/></center>
 
 #### Fichiers à Modifier
 
 Vous trouverez dans les différents fichiers à modifier, les consignes correspondantes pour chaque tâche à réaliser.
 
+**⚠️ Attention : Nous évaluerons également dans cet examen le respect des bonnes pratiques.**
+
 1. **collect.sh**  
-   Le script `collect.sh` doit être modifié pour automatiser la collecte des données toutes les 2 minutes.
+   Le script `collect.sh` doit être modifié pour automatiser la collecte des données toutes les 3 minutes.
 
 2. **preprocessed.sh**  
    Le script `preprocessed.sh` doit être modifié pour lancer le prétraitement des données collectées.
@@ -202,17 +210,16 @@ Vous trouverez dans les différents fichiers à modifier, les consignes correspo
    ```bash
    make bash
    ```
+   Le schéma du workflow est présenté plus haut du fichier README.
+
 8. **requirements.txt**
-   Le fichier requirements.txt doit inclure uniquement les bibliothèques nécessaires pour l'exécution du programme, comme pandas, numpy, xgboost, etc.
+   Le fichier requirements.txt doit inclure uniquement les bibliothèques nécessaires pour l'exécution du programme
 
-Voici un diagramme qui résume brièvement le fonctionnement attendu du programme : 
-
-<center><img src="https://assets-datascientest.s3.eu-west-1.amazonaws.com/MLOPS/image.png" style="width:80%"/></center>
-
+<br>
 
 ### Tests et Vérifications
 
-Vous ne devez pas modifier les fichiers de test fournis. Ceux-ci valideront la conformité de votre travail.
+**⚠️ Vous ne devez pas modifier les fichiers de test fournis. Ceux-ci valideront la conformité de votre travail.**
 
 - **Test de la collecte des données** (`test_collect.py`)
 - **Test de l'entraînement du modèle** (`test_model.py`)
