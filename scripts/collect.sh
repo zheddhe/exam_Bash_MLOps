@@ -1,8 +1,7 @@
 # ==============================================================================
 # Script : collect.sh
 # Description :
-#   Ce script interroge une API toutes les minutes pendant 3 minutes afin de
-#   récupérer les ventes des modèles de cartes graphiques suivants :
+#   Ce script interroge une API afin de récupérer les ventes des modèles de cartes graphiques suivants :
 #     - rtx3060
 #     - rtx3070
 #     - rtx3080
