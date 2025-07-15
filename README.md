@@ -279,6 +279,8 @@ Une fois l’ensemble du programme exécuté (collecte, prétraitement, entraîn
 
 ## Rendu final
 
+**⚠️ Merci de ne pas inclure le dossier `venv` dans l’archive du projet, car cela alourdit considérablement le fichier.**
+
 > Créez une archive exam_NOM.tar
 
 ```bash
