@@ -1,0 +1,6 @@
+2025-08-27 14:43:16,000 - INFO - Modèle trouvé : model/model.pkl
+
+=== Début des tests (2025-08-27 14:43:16) ===
+Début du test de présence du fichier modèle
+Test réussi : le fichier modèle existe.
+=== Fin des tests (2025-08-27 14:43:16) ===

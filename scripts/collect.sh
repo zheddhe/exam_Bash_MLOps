@@ -52,7 +52,7 @@ NOW_UTC="$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
 # --- Fonctions utilitaires ---
 log() {
   # Format lisible avec date locale
-  printf "[%s] %s\n" "$(date +"%Y-%m-%d %H:%M:%S")" "$*" | tee -a "$LOG_FILE" >/dev/null
+  printf "[%s] | INFO | %s\n" "$(date +"%Y-%m-%d %H:%M:%S")" "$*" | tee -a "$LOG_FILE" >/dev/null
 }
 
 ensure_dirs() {

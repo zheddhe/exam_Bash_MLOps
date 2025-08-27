@@ -1,9 +1,9 @@
 .PHONY: tests
 
 bash:
-
-
-
+	scripts/collect.sh && \
+	scripts/preprocessed.sh && \
+	./scripts/train.sh
 
 tests:
 	pytest tests/test_collect.py && \

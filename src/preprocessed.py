@@ -25,7 +25,9 @@ from pathlib import Path
 import sys
 import pandas as pd
 
-# Répertoires projet
+# --------------------------------------------------------------------------- #
+# Constantes de chemins
+# --------------------------------------------------------------------------- #
 ROOT = Path(__file__).resolve().parents[1]
 RAW_DIR = ROOT / "data" / "raw"
 PROC_DIR = ROOT / "data" / "processed"
@@ -33,23 +35,24 @@ LOG_DIR = ROOT / "logs"
 LOG_FILE = LOG_DIR / "preprocessed.logs"
 
 
+# --------------------------------------------------------------------------- #
+# Logging
+# --------------------------------------------------------------------------- #
 def _setup_logging() -> None:
     """
-    Mise en place du logger en append et niveau INFO
+    Mise en place du logger en niveau INFO
     """
     LOG_DIR.mkdir(parents=True, exist_ok=True)
     logging.basicConfig(
         filename=str(LOG_FILE),
-        filemode="a",
         level=logging.INFO,
-        format="%(message)s",
+        format="[%(asctime)s] | %(levelname)s | %(message)s",
     )
 
 
-def _now_hms() -> str:
-    return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
-
+# --------------------------------------------------------------------------- #
+# Utilitaires
+# --------------------------------------------------------------------------- #
 def _find_latest_raw_csv(explicit_path: Path | None = None) -> Path:
     """
     Trouve le dernier CSV créé/modifié dans data/raw/
@@ -129,7 +132,7 @@ def _clean_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     return wide
 
 
-def save_processed(df: pd.DataFrame, output_path: Path | None = None) -> Path:
+def _save_processed(df: pd.DataFrame, output_path: Path | None = None) -> Path:
     PROC_DIR.mkdir(parents=True, exist_ok=True)
     if output_path is None:
         stamp = datetime.now().strftime("%Y%m%d_%H%M")
@@ -138,6 +141,9 @@ def save_processed(df: pd.DataFrame, output_path: Path | None = None) -> Path:
     return output_path
 
 
+# --------------------------------------------------------------------------- #
+# Main
+# --------------------------------------------------------------------------- #
 def main() -> int:
     # Ajout d'un parser d'argument pour fichier de sortie et d'entree explicite
     parser = argparse.ArgumentParser(
@@ -153,12 +159,15 @@ def main() -> int:
     _setup_logging()
 
     # Corps du prétraitement
-    logging.info("=== Début du prétraitement (%s) ===", _now_hms())
+    logging.info("=== Début du prétraitement ===")
     try:
+        # Récupération du fichier CSF le plus récent
         input_csv = _find_latest_raw_csv(Path(args.input) if args.input else None)
         logging.info("Chargement du fichier brut : %s", input_csv)
         df = pd.read_csv(input_csv)
         logging.info("Fichier brut chargé avec %d lignes et %d colonnes", df.shape[0], df.shape[1])
+
+        # Nettoyage du dataframe
         df_clean = _clean_dataframe(df)
         logging.info("Après pivot & nettoyage : %d lignes et %d colonnes",
                      df_clean.shape[0], df_clean.shape[1])
@@ -173,7 +182,7 @@ def main() -> int:
 
         # Enregistrement du fichier
         out_path = Path(args.output) if args.output else None
-        out_csv = save_processed(df_clean, out_path)
+        out_csv = _save_processed(df_clean, out_path)
         logging.info("Fichier prétraité enregistré : %s", out_csv)
         logging.info("=== Fin du prétraitement ===")
 

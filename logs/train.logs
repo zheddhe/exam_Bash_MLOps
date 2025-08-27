@@ -1,0 +1,9 @@
+=== Lancement de train.sh (2025-08-27 14:40:52) ===
+[2025-08-27 14:40:53,711] | INFO | === Début de l'entraînement du modèle ===
+[2025-08-27 14:40:53,711] | INFO | Dernier CSV prétraité : /home/ubuntu/exam_CANAL/exam_Bash_MLOps/data/processed/sales_processed_20250827_1440.csv
+[2025-08-27 14:40:53,761] | INFO | Fichier chargé : sales_processed_20250827_1440.csv | shape=(109, 5)
+[2025-08-27 14:40:53,762] | INFO | Jeu de données pour entraînement : X=(109, 4), y=(109,)
+[2025-08-27 14:40:53,877] | INFO | Métriques — RMSE: 4.5760 | MAE: 2.6274 | R²: 0.3547
+[2025-08-27 14:40:53,885] | INFO | Modèle sauvegardé : /home/ubuntu/exam_CANAL/exam_Bash_MLOps/model/model.pkl
+[2025-08-27 14:40:53,885] | INFO | === Fin de l'entraînement du modèle ===
+=== Fin de train.sh (code retour: 0) ===
