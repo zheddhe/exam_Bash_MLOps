@@ -8,3 +8,75 @@
 [2025-08-27 14:40:52,181] | INFO | Fichier prétraité enregistré : /home/ubuntu/exam_CANAL/exam_Bash_MLOps/data/processed/sales_processed_20250827_1440.csv
 [2025-08-27 14:40:52,181] | INFO | === Fin du prétraitement ===
 === Fin de preprocessed.sh (code retour: 0) ===
+=== Lancement de preprocessed.sh (2025-08-27 14:50:06) ===
+[2025-08-27 14:50:07,242] | INFO | === Début du prétraitement ===
+[2025-08-27 14:50:07,242] | INFO | Chargement du fichier brut : /home/ubuntu/exam_CANAL/exam_Bash_MLOps/data/raw/sales_20250827_1450.csv
+[2025-08-27 14:50:07,245] | INFO | Fichier brut chargé avec 510 lignes et 3 colonnes
+[2025-08-27 14:50:07,266] | INFO | Après pivot & nettoyage : 110 lignes et 5 colonnes
+[2025-08-27 14:50:07,266] | INFO | Vérification colonne 'timestamp' : OK (non présente)
+[2025-08-27 14:50:07,267] | INFO | Vérification types entiers : OK (toutes les colonnes sont des entiers)
+[2025-08-27 14:50:07,268] | INFO | Fichier prétraité enregistré : /home/ubuntu/exam_CANAL/exam_Bash_MLOps/data/processed/sales_processed_20250827_1450.csv
+[2025-08-27 14:50:07,268] | INFO | === Fin du prétraitement ===
+=== Fin de preprocessed.sh (code retour: 0) ===
+=== Lancement de preprocessed.sh (2025-08-27 14:59:35) ===
+[2025-08-27 14:59:36,374] | INFO | === Début du prétraitement ===
+[2025-08-27 14:59:36,375] | INFO | Chargement du fichier brut : /home/ubuntu/exam_CANAL/exam_Bash_MLOps/data/raw/sales_20250827_1459.csv
+[2025-08-27 14:59:36,378] | INFO | Fichier brut chargé avec 515 lignes et 3 colonnes
+[2025-08-27 14:59:36,397] | INFO | Après pivot & nettoyage : 111 lignes et 5 colonnes
+[2025-08-27 14:59:36,397] | INFO | Vérification colonne 'timestamp' : OK (non présente)
+[2025-08-27 14:59:36,397] | INFO | Vérification types entiers : OK (toutes les colonnes sont des entiers)
+[2025-08-27 14:59:36,400] | INFO | Fichier prétraité enregistré : /home/ubuntu/exam_CANAL/exam_Bash_MLOps/data/processed/sales_processed_20250827_1459.csv
+[2025-08-27 14:59:36,400] | INFO | === Fin du prétraitement ===
+=== Fin de preprocessed.sh (code retour: 0) ===
+=== Lancement de preprocessed.sh (2025-08-27 15:06:01) ===
+Traceback (most recent call last):
+  File "src/preprocessed.py", line 56, in <module>
+    def _find_latest_raw_csv(explicit_path: Path | None = None) -> Path:
+TypeError: unsupported operand type(s) for |: 'type' and 'NoneType'
+=== Fin de preprocessed.sh (code retour: 1) ===
+=== Lancement de preprocessed.sh (2025-08-27 15:07:01) ===
+Traceback (most recent call last):
+  File "src/preprocessed.py", line 56, in <module>
+    def _find_latest_raw_csv(explicit_path: Path | None = None) -> Path:
+TypeError: unsupported operand type(s) for |: 'type' and 'NoneType'
+=== Fin de preprocessed.sh (code retour: 1) ===
+=== Lancement de preprocessed.sh (2025-08-27 15:09:47) ===
+[2025-08-27 15:09:47,851] | INFO | === Début du prétraitement ===
+[2025-08-27 15:09:47,851] | INFO | Chargement du fichier brut : /home/ubuntu/exam_CANAL/exam_Bash_MLOps/data/raw/sales_20250827_1509.csv
+[2025-08-27 15:09:47,855] | INFO | Fichier brut chargé avec 510 lignes et 3 colonnes
+[2025-08-27 15:09:47,873] | INFO | Après pivot & nettoyage : 110 lignes et 5 colonnes
+[2025-08-27 15:09:47,873] | INFO | Vérification colonne 'timestamp' : OK (non présente)
+[2025-08-27 15:09:47,873] | INFO | Vérification types entiers : OK (toutes les colonnes sont des entiers)
+[2025-08-27 15:09:47,875] | INFO | Fichier prétraité enregistré : /home/ubuntu/exam_CANAL/exam_Bash_MLOps/data/processed/sales_processed_20250827_1509.csv
+[2025-08-27 15:09:47,875] | INFO | === Fin du prétraitement ===
+=== Fin de preprocessed.sh (code retour: 0) ===
+=== Lancement de preprocessed.sh (2025-08-27 15:18:25) ===
+[2025-08-27 15:18:26,128] | INFO | === Début du prétraitement ===
+[2025-08-27 15:18:26,129] | INFO | Chargement du fichier brut : /home/ubuntu/exam_CANAL/exam_Bash_MLOps/data/raw/sales_20250827_1518.csv
+[2025-08-27 15:18:26,133] | INFO | Fichier brut chargé avec 515 lignes et 3 colonnes
+[2025-08-27 15:18:26,150] | INFO | Après pivot & nettoyage : 111 lignes et 5 colonnes
+[2025-08-27 15:18:26,151] | INFO | Vérification colonne 'timestamp' : OK (non présente)
+[2025-08-27 15:18:26,151] | INFO | Vérification types entiers : OK (toutes les colonnes sont des entiers)
+[2025-08-27 15:18:26,153] | INFO | Fichier prétraité enregistré : /home/ubuntu/exam_CANAL/exam_Bash_MLOps/data/processed/sales_processed_20250827_1518.csv
+[2025-08-27 15:18:26,153] | INFO | === Fin du prétraitement ===
+=== Fin de preprocessed.sh (code retour: 0) ===
+=== Lancement de preprocessed.sh (2025-08-27 15:19:01) ===
+[2025-08-27 15:19:02,409] | INFO | === Début du prétraitement ===
+[2025-08-27 15:19:02,409] | INFO | Chargement du fichier brut : /home/ubuntu/exam_CANAL/exam_Bash_MLOps/data/raw/sales_20250827_1519.csv
+[2025-08-27 15:19:02,412] | INFO | Fichier brut chargé avec 520 lignes et 3 colonnes
+[2025-08-27 15:19:02,431] | INFO | Après pivot & nettoyage : 112 lignes et 5 colonnes
+[2025-08-27 15:19:02,431] | INFO | Vérification colonne 'timestamp' : OK (non présente)
+[2025-08-27 15:19:02,431] | INFO | Vérification types entiers : OK (toutes les colonnes sont des entiers)
+[2025-08-27 15:19:02,433] | INFO | Fichier prétraité enregistré : /home/ubuntu/exam_CANAL/exam_Bash_MLOps/data/processed/sales_processed_20250827_1519.csv
+[2025-08-27 15:19:02,433] | INFO | === Fin du prétraitement ===
+=== Fin de preprocessed.sh (code retour: 0) ===
+=== Lancement de preprocessed.sh (2025-08-27 15:20:01) ===
+[2025-08-27 15:20:02,188] | INFO | === Début du prétraitement ===
+[2025-08-27 15:20:02,189] | INFO | Chargement du fichier brut : /home/ubuntu/exam_CANAL/exam_Bash_MLOps/data/raw/sales_20250827_1520.csv
+[2025-08-27 15:20:02,192] | INFO | Fichier brut chargé avec 525 lignes et 3 colonnes
+[2025-08-27 15:20:02,210] | INFO | Après pivot & nettoyage : 113 lignes et 5 colonnes
+[2025-08-27 15:20:02,211] | INFO | Vérification colonne 'timestamp' : OK (non présente)
+[2025-08-27 15:20:02,211] | INFO | Vérification types entiers : OK (toutes les colonnes sont des entiers)
+[2025-08-27 15:20:02,213] | INFO | Fichier prétraité enregistré : /home/ubuntu/exam_CANAL/exam_Bash_MLOps/data/processed/sales_processed_20250827_1520.csv
+[2025-08-27 15:20:02,213] | INFO | === Fin du prétraitement ===
+=== Fin de preprocessed.sh (code retour: 0) ===

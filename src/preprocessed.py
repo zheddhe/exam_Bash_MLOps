@@ -82,7 +82,7 @@ def _clean_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     Étapes:
       - Valide les colonnes attendues
       - Convertit 'sales' en numérique, remplace NaN par 0, clippe les négatifs à 0
-      - Agrège par (timestamp, model) via somme
+      - Agrège par (timestamp, model) via somme (pas obligatoire en extraction à la minute)
       - Pivot en large (colonnes=modèles), remplace NaN par 0
       - Force toutes les colonnes en entiers non négatifs (int64)
       - Supprime 'timestamp' dans la sortie

@@ -10,6 +10,8 @@ cd "$(dirname "$0")/.." || exit 1
 
 LOG_DIR="logs"
 LOG_FILE="$LOG_DIR/train.logs"
+# python à utiliser : celui de l'environnement virtuel
+PY=".venv/bin/python"
 PY_SCRIPT="src/train.py"
 
 mkdir -p "$LOG_DIR"
@@ -17,7 +19,7 @@ mkdir -p "$LOG_DIR"
 {
   echo "=== Lancement de train.sh ($(date '+%Y-%m-%d %H:%M:%S')) ==="
   # Lancement sans argument pour la chaîne d'intégration
-  python3 "$PY_SCRIPT"
+  "$PY" "$PY_SCRIPT"
   RET=$?
   echo "=== Fin de train.sh (code retour: $RET) ==="
   exit $RET

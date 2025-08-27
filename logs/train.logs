@@ -7,3 +7,57 @@
 [2025-08-27 14:40:53,885] | INFO | Modèle sauvegardé : /home/ubuntu/exam_CANAL/exam_Bash_MLOps/model/model.pkl
 [2025-08-27 14:40:53,885] | INFO | === Fin de l'entraînement du modèle ===
 === Fin de train.sh (code retour: 0) ===
+=== Lancement de train.sh (2025-08-27 14:50:07) ===
+[2025-08-27 14:50:08,857] | INFO | === Début de l'entraînement du modèle ===
+[2025-08-27 14:50:08,858] | INFO | Dernier CSV prétraité : /home/ubuntu/exam_CANAL/exam_Bash_MLOps/data/processed/sales_processed_20250827_1450.csv
+[2025-08-27 14:50:08,913] | INFO | Fichier chargé : sales_processed_20250827_1450.csv | shape=(110, 5)
+[2025-08-27 14:50:08,918] | INFO | Jeu de données pour entraînement : X=(110, 4), y=(110,)
+[2025-08-27 14:50:09,034] | INFO | Métriques — RMSE: 5.4318 | MAE: 3.4254 | R²: 0.0691
+[2025-08-27 14:50:09,042] | INFO | Modèle sauvegardé : /home/ubuntu/exam_CANAL/exam_Bash_MLOps/model/model_20250827_1450.pkl
+[2025-08-27 14:50:09,042] | INFO | === Fin de l'entraînement du modèle ===
+=== Fin de train.sh (code retour: 0) ===
+=== Lancement de train.sh (2025-08-27 14:59:36) ===
+[2025-08-27 14:59:38,075] | INFO | === Début de l'entraînement du modèle ===
+[2025-08-27 14:59:38,076] | INFO | Dernier CSV prétraité : /home/ubuntu/exam_CANAL/exam_Bash_MLOps/data/processed/sales_processed_20250827_1459.csv
+[2025-08-27 14:59:38,087] | INFO | Fichier chargé : sales_processed_20250827_1459.csv | shape=(111, 5)
+[2025-08-27 14:59:38,088] | INFO | Jeu de données pour entraînement : X=(111, 4), y=(111,)
+[2025-08-27 14:59:38,211] | INFO | Métriques — RMSE: 5.3842 | MAE: 3.1595 | R²: 0.0190
+[2025-08-27 14:59:38,220] | INFO | Modèle sauvegardé : /home/ubuntu/exam_CANAL/exam_Bash_MLOps/model/model_20250827_1459.pkl
+[2025-08-27 14:59:38,220] | INFO | === Fin de l'entraînement du modèle ===
+=== Fin de train.sh (code retour: 0) ===
+=== Lancement de train.sh (2025-08-27 15:09:48) ===
+[2025-08-27 15:09:49,538] | INFO | === Début de l'entraînement du modèle ===
+[2025-08-27 15:09:49,539] | INFO | Dernier CSV prétraité : /home/ubuntu/exam_CANAL/exam_Bash_MLOps/data/processed/sales_processed_20250827_1509.csv
+[2025-08-27 15:09:49,590] | INFO | Fichier chargé : sales_processed_20250827_1509.csv | shape=(110, 5)
+[2025-08-27 15:09:49,591] | INFO | Jeu de données pour entraînement : X=(110, 4), y=(110,)
+[2025-08-27 15:09:49,708] | INFO | Métriques — RMSE: 4.7527 | MAE: 2.8025 | R²: 0.2873
+[2025-08-27 15:09:49,717] | INFO | Modèle sauvegardé : /home/ubuntu/exam_CANAL/exam_Bash_MLOps/model/model_20250827_1509.pkl
+[2025-08-27 15:09:49,717] | INFO | === Fin de l'entraînement du modèle ===
+=== Fin de train.sh (code retour: 0) ===
+=== Lancement de train.sh (2025-08-27 15:18:26) ===
+[2025-08-27 15:18:27,635] | INFO | === Début de l'entraînement du modèle ===
+[2025-08-27 15:18:27,635] | INFO | Dernier CSV prétraité : /home/ubuntu/exam_CANAL/exam_Bash_MLOps/data/processed/sales_processed_20250827_1518.csv
+[2025-08-27 15:18:27,696] | INFO | Fichier chargé : sales_processed_20250827_1518.csv | shape=(111, 5)
+[2025-08-27 15:18:27,698] | INFO | Jeu de données pour entraînement : X=(111, 4), y=(111,)
+[2025-08-27 15:18:27,811] | INFO | Métriques — RMSE: 5.1068 | MAE: 3.2164 | R²: 0.0597
+[2025-08-27 15:18:27,820] | INFO | Modèle sauvegardé : /home/ubuntu/exam_CANAL/exam_Bash_MLOps/model/model_20250827_1518.pkl
+[2025-08-27 15:18:27,820] | INFO | === Fin de l'entraînement du modèle ===
+=== Fin de train.sh (code retour: 0) ===
+=== Lancement de train.sh (2025-08-27 15:19:02) ===
+[2025-08-27 15:19:03,959] | INFO | === Début de l'entraînement du modèle ===
+[2025-08-27 15:19:03,960] | INFO | Dernier CSV prétraité : /home/ubuntu/exam_CANAL/exam_Bash_MLOps/data/processed/sales_processed_20250827_1519.csv
+[2025-08-27 15:19:04,032] | INFO | Fichier chargé : sales_processed_20250827_1519.csv | shape=(112, 5)
+[2025-08-27 15:19:04,033] | INFO | Jeu de données pour entraînement : X=(112, 4), y=(112,)
+[2025-08-27 15:19:04,147] | INFO | Métriques — RMSE: 4.5269 | MAE: 2.7617 | R²: 0.3991
+[2025-08-27 15:19:04,155] | INFO | Modèle sauvegardé : /home/ubuntu/exam_CANAL/exam_Bash_MLOps/model/model_20250827_1519.pkl
+[2025-08-27 15:19:04,155] | INFO | === Fin de l'entraînement du modèle ===
+=== Fin de train.sh (code retour: 0) ===
+=== Lancement de train.sh (2025-08-27 15:20:02) ===
+[2025-08-27 15:20:03,846] | INFO | === Début de l'entraînement du modèle ===
+[2025-08-27 15:20:03,847] | INFO | Dernier CSV prétraité : /home/ubuntu/exam_CANAL/exam_Bash_MLOps/data/processed/sales_processed_20250827_1520.csv
+[2025-08-27 15:20:03,851] | INFO | Fichier chargé : sales_processed_20250827_1520.csv | shape=(113, 5)
+[2025-08-27 15:20:03,853] | INFO | Jeu de données pour entraînement : X=(113, 4), y=(113,)
+[2025-08-27 15:20:04,026] | INFO | Métriques — RMSE: 4.4956 | MAE: 2.7785 | R²: 0.2880
+[2025-08-27 15:20:04,034] | INFO | Modèle sauvegardé : /home/ubuntu/exam_CANAL/exam_Bash_MLOps/model/model_20250827_1520.pkl
+[2025-08-27 15:20:04,035] | INFO | === Fin de l'entraînement du modèle ===
+=== Fin de train.sh (code retour: 0) ===

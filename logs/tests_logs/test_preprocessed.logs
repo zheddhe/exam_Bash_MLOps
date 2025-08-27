@@ -1,7 +1,7 @@
 
-=== Début des tests (2025-08-27 14:43:15) ===
+=== Début des tests (2025-08-27 15:21:10) ===
 Début du test de structure du fichier prétraité
-Fichier chargé : data/processed/sales_processed_20250827_1440.csv
+Fichier chargé : data/processed/sales_processed_20250827_1520.csv
 Vérification colonne 'timestamp' : OK (non présente)
 Vérification types entiers : OK (toutes les colonnes sont des entiers)
 Test terminé pour le fichier prétraité.

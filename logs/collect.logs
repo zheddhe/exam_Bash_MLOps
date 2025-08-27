@@ -12,3 +12,115 @@
 [2025-08-27 14:40:51] | INFO | Résumé fichier : data/raw/sales_20250827_1440.csv | lignes=506 colonnes=3
 [2025-08-27 14:40:51] | INFO | Fin de la collecte.
 [2025-08-27 14:40:51] | INFO | === Fin de la tâche de collecte ===
+[2025-08-27 14:50:06] | INFO | === Début de la tâche de collecte ===
+[2025-08-27 14:50:06] | INFO | Copie du CSV source data/raw/sales_20250827_1440.csv vers data/raw/sales_20250827_1450.csv
+[2025-08-27 14:50:06] | INFO | Début de la collecte.
+[2025-08-27 14:50:06] | INFO | Fichier cible (append) : data/raw/sales_20250827_1450.csv
+[2025-08-27 14:50:06] | INFO | Horodatage (UTC) : 2025-08-27T14:50:06Z
+[2025-08-27 14:50:06] | INFO | Modèles interrogés : rtx3060 rtx3070 rtx3080 rtx3090 rx6700
+[2025-08-27 14:50:06] | INFO | Résultat | rtx3060 -> 1
+[2025-08-27 14:50:06] | INFO | Résultat | rtx3070 -> 15
+[2025-08-27 14:50:06] | INFO | Résultat | rtx3080 -> 15
+[2025-08-27 14:50:06] | INFO | Résultat | rtx3090 -> 13
+[2025-08-27 14:50:06] | INFO | Résultat | rx6700 -> 8
+[2025-08-27 14:50:06] | INFO | Résumé fichier : data/raw/sales_20250827_1450.csv | lignes=512 colonnes=3
+[2025-08-27 14:50:06] | INFO | Fin de la collecte.
+[2025-08-27 14:50:06] | INFO | === Fin de la tâche de collecte ===
+[2025-08-27 14:59:35] | INFO | === Début de la tâche de collecte ===
+[2025-08-27 14:59:35] | INFO | Copie du CSV source data/raw/sales_20250827_1450.csv vers data/raw/sales_20250827_1459.csv
+[2025-08-27 14:59:35] | INFO | Début de la collecte.
+[2025-08-27 14:59:35] | INFO | Fichier cible (append) : data/raw/sales_20250827_1459.csv
+[2025-08-27 14:59:35] | INFO | Horodatage (UTC) : 2025-08-27T14:59:35Z
+[2025-08-27 14:59:35] | INFO | Modèles interrogés : rtx3060 rtx3070 rtx3080 rtx3090 rx6700
+[2025-08-27 14:59:35] | INFO | Résultat | rtx3060 -> 9
+[2025-08-27 14:59:35] | INFO | Résultat | rtx3070 -> 0
+[2025-08-27 14:59:35] | INFO | Résultat | rtx3080 -> 0
+[2025-08-27 14:59:35] | INFO | Résultat | rtx3090 -> 18
+[2025-08-27 14:59:35] | INFO | Résultat | rx6700 -> 15
+[2025-08-27 14:59:35] | INFO | Résumé fichier : data/raw/sales_20250827_1459.csv | lignes=518 colonnes=3
+[2025-08-27 14:59:35] | INFO | Fin de la collecte.
+[2025-08-27 14:59:35] | INFO | === Fin de la tâche de collecte ===
+[2025-08-27 15:06:01] | INFO | === Début de la tâche de collecte ===
+[2025-08-27 15:06:01] | INFO | Copie du CSV source data/raw/sales_20250827_1459.csv vers data/raw/sales_20250827_1506.csv
+[2025-08-27 15:06:01] | INFO | Début de la collecte.
+[2025-08-27 15:06:01] | INFO | Fichier cible (append) : data/raw/sales_20250827_1506.csv
+[2025-08-27 15:06:01] | INFO | Horodatage (UTC) : 2025-08-27T15:06:01Z
+[2025-08-27 15:06:01] | INFO | Modèles interrogés : rtx3060 rtx3070 rtx3080 rtx3090 rx6700
+[2025-08-27 15:06:01] | INFO | Résultat | rtx3060 -> 4
+[2025-08-27 15:06:01] | INFO | Résultat | rtx3070 -> 13
+[2025-08-27 15:06:01] | INFO | Résultat | rtx3080 -> 13
+[2025-08-27 15:06:01] | INFO | Résultat | rtx3090 -> 11
+[2025-08-27 15:06:01] | INFO | Résultat | rx6700 -> 15
+[2025-08-27 15:06:01] | INFO | Résumé fichier : data/raw/sales_20250827_1506.csv | lignes=524 colonnes=3
+[2025-08-27 15:06:01] | INFO | Fin de la collecte.
+[2025-08-27 15:06:01] | INFO | === Fin de la tâche de collecte ===
+[2025-08-27 15:07:01] | INFO | === Début de la tâche de collecte ===
+[2025-08-27 15:07:01] | INFO | Copie du CSV source data/raw/sales_20250827_1506.csv vers data/raw/sales_20250827_1507.csv
+[2025-08-27 15:07:01] | INFO | Début de la collecte.
+[2025-08-27 15:07:01] | INFO | Fichier cible (append) : data/raw/sales_20250827_1507.csv
+[2025-08-27 15:07:01] | INFO | Horodatage (UTC) : 2025-08-27T15:07:01Z
+[2025-08-27 15:07:01] | INFO | Modèles interrogés : rtx3060 rtx3070 rtx3080 rtx3090 rx6700
+[2025-08-27 15:07:01] | INFO | Résultat | rtx3060 -> 19
+[2025-08-27 15:07:01] | INFO | Résultat | rtx3070 -> 4
+[2025-08-27 15:07:01] | INFO | Résultat | rtx3080 -> 4
+[2025-08-27 15:07:01] | INFO | Résultat | rtx3090 -> 9
+[2025-08-27 15:07:01] | INFO | Résultat | rx6700 -> 17
+[2025-08-27 15:07:01] | INFO | Résumé fichier : data/raw/sales_20250827_1507.csv | lignes=530 colonnes=3
+[2025-08-27 15:07:01] | INFO | Fin de la collecte.
+[2025-08-27 15:07:01] | INFO | === Fin de la tâche de collecte ===
+[2025-08-27 15:09:47] | INFO | === Début de la tâche de collecte ===
+[2025-08-27 15:09:47] | INFO | Copie du CSV source data/raw/sales_20250827_1440.csv vers data/raw/sales_20250827_1509.csv
+[2025-08-27 15:09:47] | INFO | Début de la collecte.
+[2025-08-27 15:09:47] | INFO | Fichier cible (append) : data/raw/sales_20250827_1509.csv
+[2025-08-27 15:09:47] | INFO | Horodatage (UTC) : 2025-08-27T15:09:47Z
+[2025-08-27 15:09:47] | INFO | Modèles interrogés : rtx3060 rtx3070 rtx3080 rtx3090 rx6700
+[2025-08-27 15:09:47] | INFO | Résultat | rtx3060 -> 9
+[2025-08-27 15:09:47] | INFO | Résultat | rtx3070 -> 1
+[2025-08-27 15:09:47] | INFO | Résultat | rtx3080 -> 1
+[2025-08-27 15:09:47] | INFO | Résultat | rtx3090 -> 9
+[2025-08-27 15:09:47] | INFO | Résultat | rx6700 -> 6
+[2025-08-27 15:09:47] | INFO | Résumé fichier : data/raw/sales_20250827_1509.csv | lignes=512 colonnes=3
+[2025-08-27 15:09:47] | INFO | Fin de la collecte.
+[2025-08-27 15:09:47] | INFO | === Fin de la tâche de collecte ===
+[2025-08-27 15:18:25] | INFO | === Début de la tâche de collecte ===
+[2025-08-27 15:18:25] | INFO | Copie du CSV source data/raw/sales_20250827_1509.csv vers data/raw/sales_20250827_1518.csv
+[2025-08-27 15:18:25] | INFO | Début de la collecte.
+[2025-08-27 15:18:25] | INFO | Fichier cible (append) : data/raw/sales_20250827_1518.csv
+[2025-08-27 15:18:25] | INFO | Horodatage (UTC) : 2025-08-27T15:18:25Z
+[2025-08-27 15:18:25] | INFO | Modèles interrogés : rtx3060 rtx3070 rtx3080 rtx3090 rx6700
+[2025-08-27 15:18:25] | INFO | Résultat | rtx3060 -> 13
+[2025-08-27 15:18:25] | INFO | Résultat | rtx3070 -> 20
+[2025-08-27 15:18:25] | INFO | Résultat | rtx3080 -> 20
+[2025-08-27 15:18:25] | INFO | Résultat | rtx3090 -> 4
+[2025-08-27 15:18:25] | INFO | Résultat | rx6700 -> 17
+[2025-08-27 15:18:25] | INFO | Résumé fichier : data/raw/sales_20250827_1518.csv | lignes=518 colonnes=3
+[2025-08-27 15:18:25] | INFO | Fin de la collecte.
+[2025-08-27 15:18:25] | INFO | === Fin de la tâche de collecte ===
+[2025-08-27 15:19:01] | INFO | === Début de la tâche de collecte ===
+[2025-08-27 15:19:01] | INFO | Copie du CSV source data/raw/sales_20250827_1518.csv vers data/raw/sales_20250827_1519.csv
+[2025-08-27 15:19:01] | INFO | Début de la collecte.
+[2025-08-27 15:19:01] | INFO | Fichier cible (append) : data/raw/sales_20250827_1519.csv
+[2025-08-27 15:19:01] | INFO | Horodatage (UTC) : 2025-08-27T15:19:01Z
+[2025-08-27 15:19:01] | INFO | Modèles interrogés : rtx3060 rtx3070 rtx3080 rtx3090 rx6700
+[2025-08-27 15:19:01] | INFO | Résultat | rtx3060 -> 10
+[2025-08-27 15:19:01] | INFO | Résultat | rtx3070 -> 8
+[2025-08-27 15:19:01] | INFO | Résultat | rtx3080 -> 8
+[2025-08-27 15:19:01] | INFO | Résultat | rtx3090 -> 17
+[2025-08-27 15:19:01] | INFO | Résultat | rx6700 -> 20
+[2025-08-27 15:19:01] | INFO | Résumé fichier : data/raw/sales_20250827_1519.csv | lignes=524 colonnes=3
+[2025-08-27 15:19:01] | INFO | Fin de la collecte.
+[2025-08-27 15:19:01] | INFO | === Fin de la tâche de collecte ===
+[2025-08-27 15:20:01] | INFO | === Début de la tâche de collecte ===
+[2025-08-27 15:20:01] | INFO | Copie du CSV source data/raw/sales_20250827_1519.csv vers data/raw/sales_20250827_1520.csv
+[2025-08-27 15:20:01] | INFO | Début de la collecte.
+[2025-08-27 15:20:01] | INFO | Fichier cible (append) : data/raw/sales_20250827_1520.csv
+[2025-08-27 15:20:01] | INFO | Horodatage (UTC) : 2025-08-27T15:20:01Z
+[2025-08-27 15:20:01] | INFO | Modèles interrogés : rtx3060 rtx3070 rtx3080 rtx3090 rx6700
+[2025-08-27 15:20:01] | INFO | Résultat | rtx3060 -> 13
+[2025-08-27 15:20:01] | INFO | Résultat | rtx3070 -> 4
+[2025-08-27 15:20:01] | INFO | Résultat | rtx3080 -> 4
+[2025-08-27 15:20:01] | INFO | Résultat | rtx3090 -> 17
+[2025-08-27 15:20:01] | INFO | Résultat | rx6700 -> 15
+[2025-08-27 15:20:01] | INFO | Résumé fichier : data/raw/sales_20250827_1520.csv | lignes=530 colonnes=3
+[2025-08-27 15:20:01] | INFO | Fin de la collecte.
+[2025-08-27 15:20:01] | INFO | === Fin de la tâche de collecte ===
