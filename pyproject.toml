@@ -1,7 +1,10 @@
 [project]
 name = "exam-bash-mlops"
 version = "0.1.0"
-description = "Add your description here"
+description = "Exam Bash MLOPS CANAL"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "pandas>=2.3.2",
+    "xgboost>=3.0.4",
+]
