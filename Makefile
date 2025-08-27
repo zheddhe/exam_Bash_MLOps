@@ -13,7 +13,7 @@ LOGS_DIR    := logs
 TESTS_DIR   := tests
 CRON_FILE   := $(SCRIPTS_DIR)/cron.txt
 
-.PHONY: all bash tests cron help clean
+.PHONY: all bash tests cron uncron help clean
 
 # Enchaîne les targets pour la chaine complete avec test
 all: ## Exécute le pipeline complet puis les tests
